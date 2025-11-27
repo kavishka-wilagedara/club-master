@@ -26,17 +26,33 @@ Ensure you have the following installed:
 - MongoDB
 - Maven
 
-### Backend Setup
+### Project Setup
 1. Clone the repository:
    ```sh
    git clone https://github.com/kavishka-wilagedara/club-master.git
    ```
-2. Navigate to the backend directory:
+
+### Frontend Setup
+1. Navigate to the frontend directory:
    ```sh
-   cd club-master/backend
+   cd club-master/club-master-frontend
    ```
-3. Configure `application.properties` or `application.yml` with your MongoDB credentials.
-4. Build and run the backend:
+2. Install npm
+   ```sh
+   npm install
+   ```
+3. Build and run the frontend:
+   ```sh
+   npm run dev
+   ``` 
+
+### Backend Setup
+1. Navigate to the backend directory:
+   ```sh
+   cd club-master/club-master-backend
+   ```
+2. Configure `application.properties` or `application.yml` with your MongoDB credentials.
+3. Build and run the backend:
    ```sh
    mvn spring-boot:run
    ```
@@ -48,4 +64,5 @@ For any inquiries or issues, reach out:
 
 ---
 Enjoy managing your clubs efficiently with Club Master! 🚀
+
 
