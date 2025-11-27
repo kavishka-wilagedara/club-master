@@ -1,20 +1,18 @@
+# Stage 1: Build
 FROM maven:3.9.9-eclipse-temurin-17 AS builder
-
 WORKDIR /app
 
 COPY pom.xml .
-
-RUN mvn dependency:go-offline -B
-
 COPY src ./src
 
-RUN mvn clean package
+RUN mvn clean package -DskipTests -DfinalName=app
 
-FROM openjdk:17-slim AS runner
-
+# Stage 2: Runtime
+FROM eclipse-temurin:17-jdk-focal AS runner
 WORKDIR /app
 
-COPY --from=builder /app/target/*.jar app.jar
+# Copy the Spring Boot fat jar
+COPY --from=builder /app/target/app.jar app.jar
 
 EXPOSE 7000
 
