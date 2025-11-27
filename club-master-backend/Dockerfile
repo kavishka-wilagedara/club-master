@@ -18,7 +18,7 @@ FROM eclipse-temurin:17-jdk-focal AS runner
 WORKDIR /app
 
 # Copy the built jar from the builder stage
-COPY --from=builder /app/target/app.jar app.jar
+COPY --from=builder /app/target/uokclubmanagement-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 7000
 
