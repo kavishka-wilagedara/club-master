@@ -10,7 +10,7 @@ COPY src ./src
 
 RUN mvn clean package
 
-FROM openjdk:17-jdk-slim AS runner
+FROM openjdk:17.0.8-jdk AS runner
 
 WORKDIR /app
 
