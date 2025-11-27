@@ -128,13 +128,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
-                <excludes>
-                    <exclude>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok</artifactId>
-                    </exclude>
-                </excludes>
-                <finalName>app</finalName> <!-- Add this line -->
+                <finalName>app</finalName> <!-- optional, keeps jar name simple -->
             </configuration>
         </plugin>
     </plugins>
