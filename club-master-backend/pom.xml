@@ -125,12 +125,20 @@
             </configuration>
         </plugin>
         <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <finalName>app</finalName> <!-- optional, keeps jar name simple -->
-            </configuration>
-        </plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <version>3.4.0</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>repackage</goal> <!-- ensures a runnable jar -->
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <finalName>app</finalName> <!-- keeps jar name simple -->
+    </configuration>
+</plugin>
     </plugins>
 </build>
 
