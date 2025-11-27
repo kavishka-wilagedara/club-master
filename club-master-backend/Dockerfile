@@ -5,14 +5,14 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-mvn clean package -DskipTests -DfinalName=app
+mvn clean package -DskipTests
 
 # Stage 2: Runtime
 FROM eclipse-temurin:17-jdk-focal AS runner
 WORKDIR /app
 
 # Copy the Spring Boot fat jar
-COPY --from=builder /app/target/app.jar app.jar
+COPY --from=builder /app/target/uokclubmanagement-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 7000
 
