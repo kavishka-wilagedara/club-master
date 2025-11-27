@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -DfinalName=app
 
 # Stage 2: Runtime
 FROM eclipse-temurin:17-jdk-focal AS runner
