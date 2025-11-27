@@ -1,0 +1,41 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+    background-color: #2c3e50;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Same as sidebar width */
+    overflow-y: auto;
+    min-height: calc(100vh - 60px); /* Adjust to match navbar height */
+    background-color: #f5f5f5; /* Light background for content area */
+  }
+  
+  /* Styling for the welcome screen */
+  .welcome-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .welcome-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-container p {
+    color: #7f8c8d;
+    font-size: 18px;
+  }

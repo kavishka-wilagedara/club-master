@@ -1,0 +1,175 @@
+/* Background Section */
+.background-section {
+    background-image: url('./sign.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 300px;
+    width: 200px;
+    height: auto;
+}
+
+/* Left Section for Text and Sign Up Button */
+.text-container {
+    position: absolute;
+    top: 15%; /* Adjusted for better centering */
+    left: 10%;
+    transform: translateY(-50%); /* Center vertically */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+/* Heading */
+.text-container h1 {
+    font-size: 3rem; /* Larger font size */
+    margin-bottom: 1px; /* Spacing below the heading */
+    color:white; /* Gold color for heading */
+    position: relative; /* Enable positioning for movement */
+    left: 50px; /* Move the text to the right */
+    font-family: 'Times New Roman', serif; /* Change the font style */
+}
+
+/* Description Text */
+.text-container p {
+    font-size: 1.2rem; /* Medium font size */
+    margin-bottom: 25px; /* Spacing below the text */
+    color: white; /* Light gray for better contrast */
+    line-height: 1.6; /* Increase line spacing */
+    position: relative; /* Enable positioning */
+    right: 120px; /* Move the text to the right */
+}
+
+/* Sign Up Button */
+.signup-button {
+    padding: 15px 50px; /* Adjusted padding for a larger button */
+    font-size: 20px; /* Larger font size */
+    background: linear-gradient(135deg, #368bec, #00d5ff); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Oval shape with rounded corners */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(76, 25, 25, 0.2); /* Enhanced shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Enable positioning */
+    left: 75px; /* Move the text to the right */
+}
+
+/* Hover Effect for Button */
+.signup-button:hover {
+    background: linear-gradient(135deg, #4de805, #08e686); /* Gradient change on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+/* Sign In Section */
+.signin-section {
+    position: absolute;
+    right:200px;
+    width: 100%;
+    max-width: 400px;
+    
+    padding: 30px;
+    
+    
+    text-align: center;
+    margin-top: 220px; /* Ensure the sign-in section appears below the logo */
+    
+}
+
+/* Sign In Heading */
+.signin-heading {
+    font-size: 30px; /* Adjustable size */
+    font-weight: bold;
+    color: #0849c3;
+    margin-bottom: 30px;
+    
+}
+
+
+/* Input Container */
+.input-container {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.input-box {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #0f22b1;
+    border-radius: 10px;
+    background-color:  "#FFFFFF";
+    margin-top: 10px;
+    
+}
+
+.input-box::placeholder {
+    color: #aaa;
+}
+
+/* Right-Side Icon */
+.input-container::after {
+    content: ""; /* Default icon */
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Adjust spacing from the right edge */
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #0f22b1;
+}
+/* Username Input Specific Icon */
+.input-container.username::after {
+    content: "👤"; /* Icon for username */
+}
+
+/* Password Input Specific Icon */
+.input-container.password::after {
+    content: "🔑"; /* Icon for password */
+}
+
+/* Forgot Password */
+.forgot-password {
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Sign In Button */
+.signin-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #007bff, #00d2ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signin-button:hover {
+    background: linear-gradient(45deg, #0056b3, #00a8cc);
+}
+.input-label {
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    top: -20px;  /* Move the label above the input box */
+    left: 0;
+    color: #0f22b1;  /* Adjust label color */
+    margin-top: 5px;
+  }
+  .error-messagelogin {
+    color: red;
+    font-size: 18px;
+    margin-top: 5px;
+  }

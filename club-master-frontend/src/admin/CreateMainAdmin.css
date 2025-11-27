@@ -1,0 +1,14 @@
+.create-admin{
+  margin-left: 280px;
+  margin-top: 40px;
+  width: 1100px;
+  box-shadow: 0,0,0,0.5;
+  border-radius: 30px;
+  height: 600px;
+}
+
+.title{
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}

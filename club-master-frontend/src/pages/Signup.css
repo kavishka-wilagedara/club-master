@@ -1,0 +1,189 @@
+/* Background Section */
+.backgroundd-section {
+    background-image: url('./ss.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+/* Logo */
+.logoo {
+    position: absolute;
+    top: 1px;
+    left: 270px;
+    width: 150px;
+    height: auto;
+}
+/* Left Section for Text and Sign Up Button */
+.text-containerr {
+    position: absolute;
+    top: 15%; /* Adjusted for better centering */
+    right: 10%;
+    transform: translateY(-50%); /* Center vertically */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: right;
+}
+/* Heading */
+.text-containerr h1 {
+    font-size: 3rem; /* Larger font size */
+    margin-bottom: 1px; /* Spacing below the heading */
+    color:white; /* Gold color for heading */
+    position: relative; /* Enable positioning for movement */
+    right: 50px; /* Move the text to the right */
+    font-family: 'Times New Roman', serif; /* Change the font style */
+}
+/* Description Text */
+.text-containerr p {
+    font-size: 1.2rem; /* Medium font size */
+    margin-bottom: 25px; /* Spacing below the text */
+    color: white; /* Light gray for better contrast */
+    line-height: 1.6; /* Increase line spacing */
+    position: relative; /* Enable positioning */
+    left: 120px; /* Move the text to the right */
+}
+/* Sign Up Button */
+.signinn-button {
+    padding: 15px 50px; /* Adjusted padding for a larger button */
+    font-size: 20px; /* Larger font size */
+    background: linear-gradient(135deg, #368bec, #00d5ff); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Oval shape with rounded corners */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(76, 25, 25, 0.2); /* Enhanced shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Enable positioning */
+    right: 75px; /* Move the text to the right */
+}
+
+/* Hover Effect for Button */
+.signinn-button:hover {
+    background: linear-gradient(135deg, #ff4500, #ff6a00); /* Gradient change on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+.rsignup-container {
+    position:absolute;
+    top: 20%;
+    left: 10%;
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: flex-start;    /* Ensures content starts from the top */
+    height: 100%;
+    
+  }
+  
+  .rsignup-form-wrapper {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .rsignup-heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 30px; /* Adjustable size */
+    font-weight: bold;
+    color: #0849c3;
+    position: relative; /* Enable positioning */
+    left: 50px; /* Move it 20px to the right */
+    
+  }
+  
+  .rsignup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adds spacing between fields */
+    width: 100%;
+  }
+  
+  .rinput-box {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    font-size: 1rem;
+    outline: none;
+    width: 150%;
+  }
+  
+  .rinput-box:focus {
+    border-color: #7a9cff;
+    box-shadow: 0 0 5px rgba(122, 156, 255, 0.5);
+  }
+  
+  .rsignup-button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 150%;
+    display: flex; /* Add this */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .rsignup-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .rsignup-button:active {
+    transform: scale(0.95);
+  }
+
+  /* Error message container */
+.error-message {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  color: #ff4d4f; /* Red color for errors */
+  font-size: 14px;
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+}
+
+/* Icon styling */
+.error-message i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Input field with error */
+.rinput-box.error {
+  border: 1px solid #ff4d4f; /* Red border for invalid fields */
+  animation: shake 0.3s ease-in-out; /* Shake animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

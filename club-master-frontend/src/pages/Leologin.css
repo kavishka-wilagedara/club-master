@@ -1,0 +1,137 @@
+.leo-login-page {
+    flex-direction: row;
+    background: linear-gradient(to right, #9107f3, white);;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative; /* Add this to allow absolute positioning inside this container */
+    overflow: hidden;
+}
+
+.leologin-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: 950px; /* Adjust if sidebar width is different */
+    overflow-y: auto;
+    margin-top: 350px;
+    
+    
+}
+
+.leologo-header {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Adjust if needed */
+}
+
+.leologo {
+    width: 200px;
+    height: auto;
+    position: absolute; /* Makes it free to move */
+    top: 100px;  /* Adjust this value to move the logo down */
+    left: 450px; /* Adjust this value to move the logo to the left or right */
+}
+
+.leoheading-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Keeps the text aligned with the left padding of the page */
+    
+    
+}
+
+.leomain-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    font-style: italic;
+}
+
+.leosub-heading {
+    font-size: 24px;
+    color: rgb(79, 8, 234);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.leoenrollment-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+   
+     
+   
+    
+    
+}
+
+.leoenrollment-input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    left: 35px;
+}
+
+.leosubmit-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0922e1;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    left: 35px;
+    width: 100px;
+}
+
+.leosubmit-button:hover {
+    background-color: #45a049;
+}
+
+.leobottom-left-image {
+    position: absolute;
+    margin-top: -40px;
+    width: 500px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    right: 730px;
+}
+
+.typewriter-effect {
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    text-align: right;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.typewriter-effect h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.typewriter-effect h2 {
+    font-size: 40px;
+    font-weight: normal;
+    position: relative;
+    right: 150px;
+    color: #de1212;
+    font-family: bold;
+}
+.border1 {
+    padding: 20px; /* Add some padding inside the form */
+    border: 2px solid #ccc; /* Adds a border */
+    border-radius: 10px; /* Rounds the corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for better appearance */
+    background-color: white; /* Optional: Sets a background color */
+    
+}

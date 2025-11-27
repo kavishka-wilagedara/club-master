@@ -1,0 +1,683 @@
+/* ClubDetailsColorful.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+:root {
+  /* Vibrant Color Palette */
+  --primary-color: #6c63ff;
+  --secondary-color: #536dfe;
+  --accent-color: #4895ef;
+  --danger-color: #ff4757;
+  --success-color: #00d2d3;
+  --warning-color: #ff9f43;
+  --info-color: #3fc1c9;
+  --purple-color: #7d5fff;
+  --pink-color: #ff6b81;
+  --gradient-1: linear-gradient(135deg, #6c63ff, #536dfe);
+  --gradient-2: linear-gradient(135deg, #ff6b81, #ff9f43);
+  --gradient-3: linear-gradient(135deg, #00d2d3, #3fc1c9);
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --gray-color: #6c757d;
+  --border-radius: 12px;
+  --box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
+}
+
+body {
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+.club-details-container {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%236c63ff' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Header & Banner Styles */
+.club-details-header {
+  margin-bottom: 2rem;
+}
+
+.club-details-banner {
+  background-image: var(--gradient-1);
+  padding: 3.5rem 2rem 2.5rem;
+  position: relative;
+  border-radius: 0 0 30px 30px;
+  color: white;
+  /* box-shadow: 0 15px 30px rgba(83, 109, 254, 0.3); */
+  overflow: hidden;
+}
+
+.club-details-banner::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* background: rgba(255, 255, 255, 0.1); */
+}
+
+.club-details-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* background: rgba(255, 255, 255, 0.1); */
+}
+
+.club-id-text {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  backdrop-filter: blur(5px);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.club-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.club-actions {
+  position: absolute;
+  bottom: -0.2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.action-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.delete-button {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.action-button:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.action-button i {
+  font-size: 1.2rem;
+}
+
+/* Content Styles */
+.club-details-content {
+  padding: 0 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.club-details-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  border: 1px solid rgba(108, 99, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(108, 99, 255, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card .card-header {
+  background: linear-gradient(to right, rgba(108, 99, 255, 0.1), rgba(83, 109, 254, 0.05));
+}
+
+.vision-card .card-header {
+  background: linear-gradient(to right, rgba(255, 107, 129, 0.1), rgba(255, 159, 67, 0.05));
+}
+
+.card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+}
+
+.info-card .card-header::before {
+  background-color: var(--primary-color);
+}
+
+.vision-card .card-header::before {
+  background-color: var(--pink-color);
+}
+
+.card-header i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  background: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-card .card-header i {
+  color: var(--primary-color);
+}
+
+.vision-card .card-header i {
+  color: var(--pink-color);
+}
+
+.card-header h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.card-body {
+  padding: 1.8rem;
+}
+
+/* Info Card Styles */
+.info-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #eaeaea;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-label i {
+  margin-right: 0.7rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.info-value {
+  font-weight: 600;
+  color: var(--dark-color);
+  padding-left: 1.8rem;
+  font-size: 1.05rem;
+}
+
+/* Vision Card Styles */
+.vision-card .vision-content {
+  background: linear-gradient(135deg, rgba(255, 107, 129, 0.05), rgba(255, 159, 67, 0.05));
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 5px solid var(--pink-color);
+  position: relative;
+}
+
+.vision-content::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 4rem;
+  color: rgba(255, 107, 129, 0.1);
+  font-family: serif;
+  line-height: 1;
+}
+
+.vision-content p {
+  margin: 0;
+  line-height: 1.8;
+  color: #495057;
+  font-size: 1.05rem;
+  padding-left: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.quick-action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.quick-action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.news-button::before {
+  background: var(--gradient-1);
+}
+
+.events-button::before {
+  background: var(--gradient-2);
+}
+
+.contact-button::before {
+  background: var(--gradient-3);
+}
+
+.quick-action-button:hover::before {
+  opacity: 1;
+}
+
+.quick-action-button i {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.quick-action-button span {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.news-button i {
+  color: var(--primary-color);
+}
+
+.events-button i {
+  color: var(--warning-color);
+}
+
+.contact-button i {
+  color: var(--success-color);
+}
+
+.quick-action-button:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.quick-action-button:hover i,
+.quick-action-button:hover span {
+  color: white;
+}
+
+/* Footer */
+.club-details-footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-all-button {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.1);
+}
+
+.back-to-all-button i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.back-to-all-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(108, 99, 255, 0.2);
+}
+
+/* Loading State */
+.club-details-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.loader {
+  border: 4px solid rgba(108, 99, 255, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.club-details-loader p {
+  color: var(--primary-color);
+  font-weight: 500;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Error State */
+.club-details-error,
+.club-details-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  height: 70vh;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.error-icon,
+.not-found-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.error-icon {
+  color: var(--danger-color);
+  background-color: rgba(255, 71, 87, 0.1);
+}
+
+.not-found-icon {
+  color: var(--warning-color);
+  background-color: rgba(255, 159, 67, 0.1);
+}
+
+.club-details-error h3,
+.club-details-not-found h3 {
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.club-details-error p,
+.club-details-not-found p {
+  color: var(--gray-color);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.retry-button,
+.back-button {
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.retry-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.back-button {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.retry-button i,
+.back-button i {
+  margin-right: 0.8rem;
+}
+
+.retry-button:hover,
+.back-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.retry-button:hover {
+  background-color: #5a51ff;
+}
+
+.back-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .info-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .info-label {
+    width: 200px;
+  }
+  
+  .info-value {
+    flex: 1;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .club-details-banner {
+    padding: 2.5rem 1.5rem 2rem;
+    border-radius: 0 0 25px 25px;
+  }
+  
+  .club-name {
+    font-size: 1.8rem;
+  }
+  
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-header i {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .club-actions {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  
+  .club-details-banner {
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .club-name {
+    font-size: 1.5rem;
+  }
+  
+  .card-header {
+    padding: 1.2rem;
+  }
+  
+  .card-body {
+    padding: 1.2rem;
+  }
+  
+  .vision-content::before {
+    font-size: 3rem;
+  }
+  
+  .vision-content p {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+}
+.club-logo {
+  max-width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.members-card .card-body {
+  padding: 1.5rem;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.member-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.member-name {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.member-role {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+.member-email {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}

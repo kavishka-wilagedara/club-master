@@ -1,0 +1,57 @@
+.terms-page {
+    background-image: url('./termnew1.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 120vh;
+    position: relative;
+  }
+  
+  .terms-container {
+    margin-left: 400px;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    
+    
+   
+  }
+  
+  .terms-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color:white;
+    text-align: center;
+    
+  }
+  
+  .terms-intro {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color:white;
+    text-align: center;
+  }
+  
+  .terms-section {
+    margin-bottom: 20px;
+  }
+  
+  .terms-subtitle {
+    font-size: 1.5em;
+    color:white;
+    margin-bottom: 8px;
+  }
+  
+  .terms-section p {
+    font-size: 1em;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  .terms-footer {
+    margin-top: 20px;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+  }
+  

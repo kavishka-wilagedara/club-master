@@ -1,0 +1,82 @@
+.administrator-sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  height: calc(100vh - 60px); /* Subtract navbar height from viewport height */
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 60px; /* Position below navbar - adjust to match your navbar height */
+  left: 0;
+  overflow-y: auto;
+  z-index: 100; /* Ensure it stays above main content */
+}
+
+.administrator-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.administrator-sidebar-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.administrator-sidebar-item:hover {
+  background-color: #34495e;
+}
+
+.administrator-icon {
+  font-size: 20px;
+}
+
+.administrator-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 20px;
+}
+
+.administrator-submenu li {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.administrator-submenu li:hover {
+  color: #1abc9c;
+}
+
+.submenu-icon {
+  font-size: 16px;
+  color: #bdc3c7;
+}
+
+.category-divider {
+  border: 0;
+  height: 1px;
+  background-color: #34495e;
+  margin: 10px 0;
+}
+
+/* Scrollbar styling */
+.administrator-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.administrator-sidebar::-webkit-scrollbar-thumb {
+  background-color: #34495e;
+  border-radius: 4px;
+}
+
+.administrator-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #1abc9c;
+}

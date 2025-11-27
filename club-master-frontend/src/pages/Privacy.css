@@ -1,0 +1,100 @@
+/* Privacy.css */
+
+  
+  .privacy-container {
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('./blue.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+   
+  }
+  
+  .privacy-header {
+    
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 70px;
+  }
+  
+  .privacy-header h1 {
+    margin: 0;
+    font-size: 40px;
+  }
+  
+  .privacy-header p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-size: 25px;
+  }
+  
+  .privacy-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    margin-top: 25px;
+    
+  }
+  
+  .privacy-content h2 {
+    color: white;
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  
+  .privacy-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: aliceblue;
+  }
+  
+  .privacy-footer {
+    background-color: rgba(0, 68, 204, 0.8); /* Semi-transparent overlay */
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .privacy-footer p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .privacy-header h1 {
+      font-size: 30px;
+    }
+  
+    .privacy-header p {
+      font-size: 16px;
+    }
+  
+    .privacy-content {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .privacy-content h2 {
+      font-size: 20px;
+    }
+  
+    .privacy-content p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .privacy-header h1 {
+      font-size: 26px;
+    }
+  
+    .privacy-content h2 {
+      font-size: 18px;
+    }
+  
+    
+  }
+  

@@ -1,0 +1,12 @@
+services:
+  backend:
+    build:
+      context: ./club-master-backend
+      dockerfile: Dockerfile
+    image: clubmaster-backend:latest
+
+  frontend:
+    build:
+      context: ./club-master-frontend
+      dockerfile: Dockerfile
+    image: clubmaster-frontend:latest

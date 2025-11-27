@@ -1,0 +1,60 @@
+.faqs-container {
+    background-image: url('./rbbb.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 130vh;
+    position: relative;
+  }
+  
+  .faqs-header {
+    text-align: center;
+    margin-Top: 20px;
+    color:black; 
+  }
+  
+  .faqs-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .faqs-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    padding: 15px;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    color:black; 
+  }
+  
+  .plus-minus {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  .question-text {
+    flex-grow: 1;
+  }
+  
+  .faq-answer {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding-left: 20px;
+    color:black; 
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+  }
+  
