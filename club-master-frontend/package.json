@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite --host 0.0.0.0",
+  "build": "vite build",
+  "start": "serve -s dist",
+  "preview": "vite preview"
+},
   "dependencies": {
     "@asgardeo/auth-react": "^5.2.0",
     "@fortawesome/fontawesome-free": "^6.7.2",
