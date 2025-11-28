@@ -6,6 +6,8 @@ import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 export default function ViewAdminNews() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+  
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,7 +26,7 @@ export default function ViewAdminNews() {
     const getAllClubs = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/club/all`);
+            const response = await axios.get(`${backendUrl}/club/all`);
             setClubs(response.data);
             setError(null);
         } catch (error) {
@@ -45,7 +47,7 @@ export default function ViewAdminNews() {
         setLoadingNews(true);
         setNewsError(null);
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/news/${clubId}/getAllNews`);
+            const response = await axios.get(`${backendUrl}/news/${clubId}/getAllNews`);
             setClubNews(response.data);
         } catch (error) {
             console.error('Error fetching news:', error);
@@ -70,7 +72,7 @@ export default function ViewAdminNews() {
     
         if (result.isConfirmed) {
             try {
-                await axios.delete(`http://localhost:7000/api/v1/news/delete/${newsId}`);
+                await axios.delete(`${backendUrl}/news/delete/${newsId}`);
                 // Refresh news list after deletion
                 if (selectedClub) {
                     fetchClubNews(selectedClub.clubId);

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import "../admin/ViewAllMainAdmin.css"; 
 
 export default function ViewAllMainAdmin() {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const [admins, setAdmins] = useState([]);
 
   useEffect(() => {
@@ -12,7 +14,7 @@ export default function ViewAllMainAdmin() {
   const getAllAdmins = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/mainAdmin/all`
+        `${backendUrl}/mainAdmin/all`
       );
       setAdmins(response.data || []);
       console.log("API response:", response.data);

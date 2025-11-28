@@ -6,6 +6,8 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function ViewMyOngoingEvents() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,7 +32,7 @@ export default function ViewMyOngoingEvents() {
 
   const getAllClubsByUser = async () => {
     try {
-      const response = await axios.get(`http://localhost:7000/api/v1/club/${user.id}/getClubs`);
+      const response = await axios.get(`${backendUrl}/club/${user.id}/getClubs`);
       console.log('API Response:', response.data);
       setClubs(response.data);
       setLoading(false);

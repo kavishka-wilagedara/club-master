@@ -9,6 +9,8 @@ import { FaUsers } from "react-icons/fa";
 
 // ClubCard component that uses club data from API
 const ClubCard = ({ club }) => {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Use the backgroundImageUrls from the API response
@@ -61,7 +63,7 @@ const Clubhome = () => {
 
   const getAllClubs = async () => {
     try {
-      const response = await axios.get("http://localhost:7000/api/v1/club/all");
+      const response = await axios.get(`${backendUrl}/club/all`);
       console.log('Clubs data:', response.data);
 
       const filteredClubs = response.data.filter(club => 

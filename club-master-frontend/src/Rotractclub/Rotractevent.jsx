@@ -18,6 +18,8 @@ import { useSearchParams } from "react-router-dom";
 import { UserContext } from "../common/UserContext";
 
 const RotracEvent = () => {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const [events, setEvents] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [editingComment, setEditingComment] = useState(null);
@@ -38,14 +40,14 @@ const RotracEvent = () => {
   const getEventsByClubId = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/event/${clubId}/events`
+        `${backendUrl}/event/${clubId}/events`
       );
       console.log("Fetched Events:", response.data);
 
       const eventsWithComments = await Promise.all(
         response.data.map(async (event) => {
           const commentsResponse = await axios.get(
-            `http://localhost:7000/api/v1/comment/allComments/${event.eventId}`
+            `${backendUrl}/comment/allComments/${event.eventId}`
           );
           return {
             ...event,
@@ -69,11 +71,11 @@ const RotracEvent = () => {
 
       if (isLiked) {
         await axios.post(
-          `http://localhost:7000/api/v1/like/${eventId}/removeLikeEvent/${clubId}/${memberId}`
+          `${backendUrl}/like/${eventId}/removeLikeEvent/${clubId}/${memberId}`
         );
       } else {
         await axios.post(
-          `http://localhost:7000/api/v1/like/${eventId}/addLikeEvent/${clubId}/${memberId}`
+          `${backendUrl}/like/${eventId}/addLikeEvent/${clubId}/${memberId}`
         );
       }
 
@@ -112,7 +114,7 @@ const RotracEvent = () => {
       const isDisliked = event.like.membersDislike.includes(memberId);
 
       await axios.post(
-        `http://localhost:7000/api/v1/like/${eventId}/removeLikeEvent/${clubId}/${memberId}`
+        `${backendUrl}/like/${eventId}/removeLikeEvent/${clubId}/${memberId}`
       );
 
       setEvents(
@@ -154,7 +156,7 @@ const RotracEvent = () => {
       };
 
       await axios.post(
-        `http://localhost:7000/api/v1/comment/${eventId}/saveComment/${clubId}/${memberId}`,
+        `${backendUrl}/comment/${eventId}/saveComment/${clubId}/${memberId}`,
         commentObj
       );
       getEventsByClubId();
@@ -176,7 +178,7 @@ const RotracEvent = () => {
       };
 
       await axios.put(
-        `http://localhost:7000/api/v1/comment/${memberId}/updateComment/${commentId}`,
+        `${backendUrl}/comment/${memberId}/updateComment/${commentId}`,
         commentObj
       );
       getEventsByClubId();
@@ -192,7 +194,7 @@ const RotracEvent = () => {
 
     try {
       await axios.post(
-        `http://localhost:7000/api/v1/comment/${memberId}/${clubId}/deleteComment/${eventId}/${commentId}`
+        `${backendUrl}/comment/${memberId}/${clubId}/deleteComment/${eventId}/${commentId}`
       );
 
       getEventsByClubId();

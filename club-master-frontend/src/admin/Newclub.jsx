@@ -3,6 +3,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const ClubRegistrationForm = () => {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   // State for form data
   const [formData, setFormData] = useState({
     clubName: '',
@@ -78,7 +80,7 @@ const ClubRegistrationForm = () => {
 
     try {
       // Send data to backend
-      const response = await axios.post('http://localhost:7000/api/v1/club/save', formDataToSend, {
+      const response = await axios.post(`${backendUrl}/club/save`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

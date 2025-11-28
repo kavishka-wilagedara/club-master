@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Contact = () => {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -37,7 +39,7 @@ const Contact = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await fetch("http://localhost:8080/api/v1/help/save", {
+      const response = await fetch(`${backendUrl}/help/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

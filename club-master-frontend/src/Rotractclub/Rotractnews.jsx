@@ -7,6 +7,8 @@ import { useSearchParams } from 'react-router-dom';
 import { UserContext } from '../common/UserContext';
 
 const RotaractNewsFeed = () => {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const [interactions, setInteractions] = useState({});
   const [news, setNews] = useState([]);
   const [searchParams] = useSearchParams();
@@ -24,7 +26,7 @@ const RotaractNewsFeed = () => {
   const getNewsByClub = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/news/${clubId}/getAllNews`
+        `${backendUrl}/news/${clubId}/getAllNews`
       );
       console.log("Fetched News:", response.data);
       setNews(response.data);
@@ -52,15 +54,15 @@ const RotaractNewsFeed = () => {
 
       if (hasLiked) {
         await axios.post(
-          `http://localhost:7000/api/v1/like/${id}/removeLikeNews/${clubId}/${memberId}`
+          `${backendUrl}/like/${id}/removeLikeNews/${clubId}/${memberId}`
         );
       } else {
         await axios.post(
-          `http://localhost:7000/api/v1/like/${id}/addLikeNews/${clubId}/${memberId}`
+          `${backendUrl}/like/${id}/addLikeNews/${clubId}/${memberId}`
         );
         if (hasDisliked) {
           await axios.post(
-            `http://localhost:7000/api/v1/dislike/${id}/removeDislikeNews/${clubId}/${memberId}`
+            `${backendUrl}/dislike/${id}/removeDislikeNews/${clubId}/${memberId}`
           );
         }
       }
@@ -87,15 +89,15 @@ const RotaractNewsFeed = () => {
 
       if (hasDisliked) {
         await axios.post(
-          `http://localhost:7000/api/v1/dislike/${id}/removeDislikeNews/${clubId}/${memberId}`
+          `${backendUrl}/dislike/${id}/removeDislikeNews/${clubId}/${memberId}`
         );
       } else {
         await axios.post(
-          `http://localhost:7000/api/v1/dislike/${id}/addDislikeNews/${clubId}/${memberId}`
+          `${backendUrl}/dislike/${id}/addDislikeNews/${clubId}/${memberId}`
         );
         if (hasLiked) {
           await axios.post(
-            `http://localhost:7000/api/v1/like/${id}/removeLikeNews/${clubId}/${memberId}`
+            `${backendUrl}/like/${id}/removeLikeNews/${clubId}/${memberId}`
           );
         }
       }

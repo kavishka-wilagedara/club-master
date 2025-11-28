@@ -4,6 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function ViewClubAdminAwards() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const { user } = useContext(UserContext);
   const clubId = user?.id?.split(':')[0];
   const clubAdminId = user?.id;
@@ -20,7 +22,7 @@ export default function ViewClubAdminAwards() {
           return;
         }
         
-        const response = await axios.get(`http://localhost:7000/api/v1/award/${clubId}/getAllAwardsByClubId`);
+        const response = await axios.get(`${backendUrl}/award/${clubId}/getAllAwardsByClubId`);
         setAwards(response.data);
         setLoading(false);
       } catch (err) {
@@ -54,7 +56,7 @@ export default function ViewClubAdminAwards() {
   
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:7000/api/v1/award/${awardId}/deleteAward`);
+        await axios.delete(`${backendUrl}/award/${awardId}/deleteAward`);
         setAwards(awards.filter(award => award.awardId !== awardId));
         Swal.fire(
           'Deleted!',

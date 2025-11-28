@@ -6,6 +6,8 @@ import axios from 'axios'; // Import axios for making HTTP requests
 import Swal from 'sweetalert2'; // Import SweetAlert2
 
 const Signup = () => {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -57,7 +59,7 @@ const Signup = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post('http://localhost:7000/api/v1/member/save', formData, {
+      const response = await axios.post(`${backendUrl}/member/save`, formData, {
         headers: {
           'Content-Type': 'application/json', // Ensure the correct content type
         },

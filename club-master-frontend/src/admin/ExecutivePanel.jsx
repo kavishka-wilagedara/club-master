@@ -4,6 +4,7 @@ import { Users, X, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function ExecutivePanel() {
+    const backendUrl=import.meta.env.BACKEND_URL;
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
@@ -23,7 +24,7 @@ export default function ExecutivePanel() {
         const fetchClubs = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:7000/api/v1/club/all');
+                const response = await axios.get(`${backendUrl}/club/all`);
                 setClubs(response.data);
                 setLoading(false);
             } catch (error) {
@@ -41,7 +42,7 @@ export default function ExecutivePanel() {
         setLoadingPanel(true);
         
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/execution-panel/${club.clubId}`);
+            const response = await axios.get(`${backendUrl}/execution-panel/${club.clubId}`);
             setExecutivePanelMembers(response.data);
         } catch (error) {
             console.error('Error fetching executive panel:', error);
@@ -73,7 +74,7 @@ export default function ExecutivePanel() {
             // Method 1: Using a more explicitly formatted request with appropriate headers
             await axios({
                 method: 'DELETE',
-                url: `http://localhost:7000/api/v1/execution-panel/delete/${selectedClub.clubId}`,
+                url: `${backendUrl}/execution-panel/delete/${selectedClub.clubId}`,
                 data: deleteExecutiveDTO,
                 headers: {
                     'Content-Type': 'application/json',
@@ -83,7 +84,7 @@ export default function ExecutivePanel() {
             });
             
             // Alternative method (comment out the above and use this if needed)
-            // const response = await fetch(`http://localhost:7000/api/v1/execution-panel/delete/${selectedClub.clubId}`, {
+            // const response = await fetch(`${backendUrl}/execution-panel/delete/${selectedClub.clubId}`, {
             //     method: 'DELETE',
             //     headers: {
             //         'Content-Type': 'application/json',

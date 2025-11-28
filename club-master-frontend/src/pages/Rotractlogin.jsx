@@ -10,6 +10,8 @@ import Navbar from '../components/Navbar';
 
 
 const ClubEnrollment = () => {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [enrollmentKey, setEnrollmentKey] = useState('');
@@ -38,7 +40,7 @@ const ClubEnrollment = () => {
 
       }
       const response = await axios.post(
-        `http://localhost:7000/api/v1/club/${user.id}/enroll-member/${clubId}`,
+        `${backendUrl}/club/${user.id}/enroll-member/${clubId}`,
         { enrollmentKey: enrollmentKey }
       );
       console.log(response.data);

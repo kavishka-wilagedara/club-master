@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 import { Trash2 } from 'lucide-react';
 
 const UserHelp = () => {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -15,7 +17,7 @@ const UserHelp = () => {
     const fetchMessages = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:7000/api/v1/help/all');
+            const response = await axios.get(`${backendUrl}/help/all`);
             setMessages(response.data);
         } catch (error) {
             console.error('Error fetching messages:', error);
@@ -44,7 +46,7 @@ const UserHelp = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`http://localhost:7000/api/v1/help/${helpId}/delete`);
+                    await axios.delete(`${backendUrl}/help/${helpId}/delete`);
                     // Refresh the list after deletion
                     fetchMessages();
                     

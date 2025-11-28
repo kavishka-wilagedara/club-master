@@ -6,6 +6,8 @@ import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 export default function ViewAdminProjects() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,7 +26,7 @@ export default function ViewAdminProjects() {
     const getAllClubs = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/club/all`);
+            const response = await axios.get(`${backendUrl}/club/all`);
             setClubs(response.data);
             setError(null);
         } catch (error) {
@@ -41,7 +43,7 @@ export default function ViewAdminProjects() {
         setLoadingProjects(true);
         
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/project/${club.clubId}/getAllProjectsByClubId`);
+            const response = await axios.get(`${backendUrl}/project/${club.clubId}/getAllProjectsByClubId`);
             setClubProjects(response.data);
             setProjectsError(null);
         } catch (error) {
@@ -64,7 +66,7 @@ export default function ViewAdminProjects() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`http://localhost:7000/api/v1/project/${projectId}/deleteProject`);
+                    await axios.delete(`${backendUrl}/project/${projectId}/deleteProject`);
                     
                     // Update the local state to remove the deleted project
                     setClubProjects(clubProjects.filter(project => project.projectId !== projectId));

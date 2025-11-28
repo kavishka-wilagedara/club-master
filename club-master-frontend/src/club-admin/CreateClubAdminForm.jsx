@@ -10,6 +10,8 @@ import {
 } from "react-icons/fi";
 
 export default function CreateClubAdminForm() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [formData, setFormData] = useState({
     clubId: "",
     memberId: "",
@@ -34,7 +36,7 @@ export default function CreateClubAdminForm() {
     e.preventDefault();
   
     try {
-        const response = await axios.post(`http://localhost:7000/api/v1/clubAdmin/save`, formData);
+        const response = await axios.post(`${backendUrl}/clubAdmin/save`, formData);
     } catch (error) {
         
     }

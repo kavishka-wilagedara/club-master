@@ -4,6 +4,8 @@ import { UserContext } from "../common/UserContext";
 import axios from "axios";
 
 export default function ViewAllClubAdmin() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [clubAdmins, setClubAdmins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,7 +23,7 @@ export default function ViewAllClubAdmin() {
   const getALlClubAdmin = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/clubAdmin/allClubsAdmins/${clubId}`
+        `${backendUrl}/clubAdmin/allClubsAdmins/${clubId}`
       );
       console.log(response.data);
       setClubAdmins(response.data);

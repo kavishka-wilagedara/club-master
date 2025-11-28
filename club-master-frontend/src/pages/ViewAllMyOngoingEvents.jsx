@@ -5,6 +5,8 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 
 export default function ViewAllMyOngoingEvents() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [events, setEvents] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ export default function ViewAllMyOngoingEvents() {
     const fetchOngoingEvents = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:7000/api/v1/event/${eventStatus}/${clubId}`);
+        const response = await axios.get(`${backendUrl}/event/${eventStatus}/${clubId}`);
         setEvents(response.data);
         setError(null);
       } catch (error) {

@@ -4,6 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function ViewClubAdminNews() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
     const [news, setNews] = useState([]);
     const { user } = useContext(UserContext);
     const clubId = user?.id?.split(':')[0];
@@ -52,7 +54,7 @@ export default function ViewClubAdminNews() {
         
         for (const memberId of memberIds) {
             try {
-                const response = await axios.get(`http://localhost:7000/api/v1/member/getMember-memberId/${memberId}`);
+                const response = await axios.get(`${backendUrl}/member/getMember-memberId/${memberId}`);
                 details[memberId] = {
                     name: `${response.data.firstName} ${response.data.lastName}`,
                     imageUrl: response.data.memberImageUrl
@@ -68,7 +70,7 @@ export default function ViewClubAdminNews() {
 
     const getAllNews = async () => {
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/news/${clubId}/getAllNews`);
+            const response = await axios.get(`${backendUrl}/news/${clubId}/getAllNews`);
             console.log(response.data);
             setNews(response.data);
         } catch (error) {
@@ -105,7 +107,7 @@ export default function ViewClubAdminNews() {
         
         try {
             await axios.put(
-                `http://localhost:7000/api/v1/news/${user.id}/update/${selectedNews.newsId}`,
+                `${backendUrl}/news/${user.id}/update/${selectedNews.newsId}`,
                 updatedNews
             );
             
@@ -142,7 +144,7 @@ export default function ViewClubAdminNews() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`http://localhost:7000/api/v1/news/delete/${newsId}`);
+                    await axios.delete(`${backendUrl}/news/delete/${newsId}`);
                     
                     Swal.fire({
                         title: 'Deleted!',

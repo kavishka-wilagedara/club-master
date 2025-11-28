@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const CreateMainAdmin = () => {
+  const backendUrl=import.meta.env.BACKEND_URL;
   const [formData, setFormData] = useState({
     mainAdminName: "",
     mainAdminEmail: "",
@@ -16,7 +17,7 @@ const CreateMainAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     try {
-      const response = await axios.post(`http://localhost:7000/api/v1/mainAdmin/save`, formData);
+      const response = await axios.post(`${backendUrl}/mainAdmin/save`, formData);
       console.log(response.data);
 
       Swal.fire({

@@ -6,7 +6,8 @@ import axios from 'axios';
 import { UserContext } from '../common/UserContext';
 
 const UserProfile = () => {
-  
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const { user } = useContext(UserContext);
   const [userDetails, setUserDetails] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -17,7 +18,7 @@ const UserProfile = () => {
 
   const handleGetUserById = async () => {
     try {
-      const response = await axios.get(`http://localhost:7000/api/v1/member/getMember-memberId/${user.id}`);
+      const response = await axios.get(`${backendUrl}/member/getMember-memberId/${user.id}`);
       console.log(response.data);
       setUserDetails(response.data);
     } catch (error) {
@@ -36,7 +37,7 @@ const UserProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:7000/api/v1/member/updateMember-memberId/${user.id}`, userDetails);
+      const response = await axios.put(`${backendUrl}/member/updateMember-memberId/${user.id}`, userDetails);
       console.log(response.data);
       setIsEditing(false);
     } catch (error) {

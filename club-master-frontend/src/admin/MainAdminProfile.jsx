@@ -3,6 +3,7 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function MainAdminProfile() {
+    const backendUrl=import.meta.env.BACKEND_URL;
     const { user } = useContext(UserContext);
     const [admin, setAdmin] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ export default function MainAdminProfile() {
     useEffect(() => {
         const fetchAdminData = async () => {
             try {
-                const response = await axios.get(`http://localhost:7000/api/v1/mainAdmin/find-mainAdmin/${user.id}`);
+                const response = await axios.get(`${backendUrl}/mainAdmin/find-mainAdmin/${user.id}`);
                 setAdmin(response.data);
                 setFormData({
                     mainAdminName: response.data.mainAdminName,
@@ -103,7 +104,7 @@ export default function MainAdminProfile() {
 
             // Send update request
             const response = await axios.put(
-                `http://localhost:7000/api/v1/mainAdmin/update/${admin.mainAdminId}`,
+                `${backendUrl}/mainAdmin/update/${admin.mainAdminId}`,
                 updateFormData,
                 {
                     headers: {
@@ -114,7 +115,7 @@ export default function MainAdminProfile() {
 
             if (response.status === 200) {
                 // Refresh admin data
-                const updatedAdminResponse = await axios.get(`http://localhost:7000/api/v1/mainAdmin/find-mainAdmin/${admin.mainAdminId}`);
+                const updatedAdminResponse = await axios.get(`${backendUrl}/mainAdmin/find-mainAdmin/${admin.mainAdminId}`);
                 setAdmin(updatedAdminResponse.data);
 
                 setUpdateMessage({ type: 'success', message: 'Profile updated successfully' });

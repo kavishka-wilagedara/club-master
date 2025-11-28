@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 import { UserContext } from "../common/UserContext";
 
 const Login = () => {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const {setUser} = useContext(UserContext);
@@ -15,7 +17,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-        const response = await axios.post("http://localhost:7000/api/v1/login", {
+        const response = await axios.post(`${backendUrl}/login`, {
             username,
             password,
         });

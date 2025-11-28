@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 import "./ViewAllClubs.css";
 
 export default function ViewAllClubs({ changeView }) {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +16,7 @@ export default function ViewAllClubs({ changeView }) {
   const getAllClubs = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:7000/api/v1/club/all");
+      const response = await axios.get(`${backendUrl}/club/all`);
       console.log(response.data);
       setClubs(response.data);
       setLoading(false);
@@ -38,7 +40,7 @@ export default function ViewAllClubs({ changeView }) {
 
     if (result.isConfirmed) {
       try {
-        const response = await axios.delete(`http://localhost:7000/api/v1/club/delete/${id}`);
+        const response = await axios.delete(`${backendUrl}/club/delete/${id}`);
         console.log(response.data);
 
         Swal.fire({

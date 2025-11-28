@@ -3,6 +3,8 @@ import axios from "axios";
 import "./ViewClubDetails.css";
 
 export default function ClubDetails({ clubId }) {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +17,7 @@ export default function ClubDetails({ clubId }) {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:7000/api/v1/club/findClub/${clubId}`
+        `${backendUrl}/club/findClub/${clubId}`
       );
       console.log(response.data);
       setClub(response.data);

@@ -3,6 +3,8 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function ClubAdminProfile() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
     const [userData, setUserData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -22,7 +24,7 @@ export default function ClubAdminProfile() {
 
     const getUser = async () => {
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/clubAdmin/getClubAdmin/${user.id}`);
+            const response = await axios.get(`${backendUrl}/clubAdmin/getClubAdmin/${user.id}`);
             setUserData(response.data);
             setLoading(false);
         } catch (error) {
@@ -67,7 +69,7 @@ export default function ClubAdminProfile() {
                 password: passwordData.password
             };
             
-            await axios.put(`http://localhost:7000/api/v1/clubAdmin/update/${userData.clubAdminId}`, updateData);
+            await axios.put(`${backendUrl}/clubAdmin/update/${userData.clubAdminId}`, updateData);
             
             // Reset password fields and show success message
             setPasswordData({

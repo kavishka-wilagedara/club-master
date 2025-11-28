@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function AdminCreateClubAdmin() {
+  const backendUrl=import.meta.env.BACKEND_URL;
   const [formData, setFormData] = useState({
     memberId: "",
     clubId: "",
@@ -147,7 +148,7 @@ export default function AdminCreateClubAdmin() {
 
     try {
       const response = await axios.post(
-        `http://localhost:7000/api/v1/clubAdmin/${formData.memberId}/save/${formData.clubId}`,
+        `${backendUrl}/clubAdmin/${formData.memberId}/save/${formData.clubId}`,
         data,
         {
           headers: {

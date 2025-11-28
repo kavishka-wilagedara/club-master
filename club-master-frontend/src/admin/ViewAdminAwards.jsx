@@ -6,6 +6,8 @@ import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 export default function ViewAdminAwards() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,7 +26,7 @@ export default function ViewAdminAwards() {
     const getAllClubs = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/club/all`);
+            const response = await axios.get(`${backendUrl}/club/all`);
             setClubs(response.data);
             setError(null);
         } catch (error) {
@@ -41,7 +43,7 @@ export default function ViewAdminAwards() {
         setLoadingAwards(true);
         
         try {
-            const response = await axios.get(`http://localhost:7000/api/v1/award/${club.clubId}/getAllAwardsByClubId`);
+            const response = await axios.get(`${backendUrl}/award/${club.clubId}/getAllAwardsByClubId`);
             setClubAwards(response.data);
             setAwardsError(null);
         } catch (error) {
@@ -64,7 +66,7 @@ export default function ViewAdminAwards() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`http://localhost:7000/api/v1/award/${awardId}/deleteAward`);
+                    await axios.delete(`${backendUrl}/award/${awardId}/deleteAward`);
                     
                     // Update the awards list after deletion
                     setClubAwards(clubAwards.filter(award => award.awardId !== awardId));

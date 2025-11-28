@@ -4,6 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function ViewClubAdminProjects() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const { user } = useContext(UserContext);
   const clubId = user?.id?.split(':')[0];
   const clubAdminId = user?.id;
@@ -20,7 +22,7 @@ export default function ViewClubAdminProjects() {
       }
       
       try {
-        const response = await axios.get(`http://localhost:7000/api/v1/project/${clubId}/getAllProjectsByClubId`);
+        const response = await axios.get(`${backendUrl}/project/${clubId}/getAllProjectsByClubId`);
         setProjects(response.data);
         setLoading(false);
       } catch (err) {
@@ -61,7 +63,7 @@ export default function ViewClubAdminProjects() {
   
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:7000/api/v1/project/${projectId}/deleteProject`);
+        await axios.delete(`${backendUrl}/project/${projectId}/deleteProject`);
         setProjects(projects.filter(project => project.projectId !== projectId));
         Swal.fire(
           'Deleted!',

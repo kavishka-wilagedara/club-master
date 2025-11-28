@@ -3,6 +3,8 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function AddNews() {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const { user } = useContext(UserContext);
   const clubId = user?.id?.split(':')[0];
   
@@ -42,7 +44,7 @@ export default function AddNews() {
       };
       
       const response = await axios.post(
-        `http://localhost:7000/api/v1/news/${clubId}/save/${clubAdminId}`,
+        `${backendUrl}/news/${clubId}/save/${clubAdminId}`,
         newsData,
         {
           headers: {

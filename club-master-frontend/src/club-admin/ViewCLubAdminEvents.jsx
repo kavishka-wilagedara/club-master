@@ -4,6 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function ViewClubAdminEvents() {
+      const backendUrl=import.meta.env.BACKEND_URL;
+
     const [events, setEvents] = useState([]);
     const { user } = useContext(UserContext);
     const [loading, setLoading] = useState(true);
@@ -29,7 +31,7 @@ export default function ViewClubAdminEvents() {
     const getAllEvents = async () => {
         try {
             setLoading(true);
-            const response = await axios.get(`http://localhost:7000/api/v1/event/${clubId}/events`);
+            const response = await axios.get(`${backendUrl}/event/${clubId}/events`);
             console.log(response.data);
             setEvents(response.data);
             setLoading(false);
@@ -108,7 +110,7 @@ export default function ViewClubAdminEvents() {
     
         if (result.isConfirmed) {
             try {
-                await axios.delete(`http://localhost:7000/api/v1/event/delete/${eventId}`);
+                await axios.delete(`${backendUrl}/event/delete/${eventId}`);
                 setEvents(events.filter(event => event.eventId !== eventId));
                 Swal.fire(
                     'Deleted!',
@@ -208,7 +210,7 @@ export default function ViewClubAdminEvents() {
             
             // Use PUT request for update
             const response = await axios.put(
-                `http://localhost:7000/api/v1/event/${clubAdminId}/update/${currentEvent.eventId}`,
+                `${backendUrl}/event/${clubAdminId}/update/${currentEvent.eventId}`,
                 formDataObj,
                 {
                     headers: {

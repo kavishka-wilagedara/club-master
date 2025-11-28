@@ -6,6 +6,8 @@ import Sidebar from "../components/Sidebar";
 import { ThumbsUp, ThumbsDown, Calendar, User, Clock, Share2, Bookmark } from "lucide-react";
 
 export default function ViewAllNews() {
+    const backendUrl=import.meta.env.BACKEND_URL;
+
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();
@@ -16,7 +18,7 @@ export default function ViewAllNews() {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/api/v1/news/${clubId}/getAllNews`
+          `${backendUrl}/news/${clubId}/getAllNews`
         );
         setNews(response.data);
       } catch (error) {

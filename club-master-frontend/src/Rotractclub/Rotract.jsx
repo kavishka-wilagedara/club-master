@@ -7,6 +7,8 @@ import axios from "axios";
 import { Link, useSearchParams } from "react-router-dom";
 
 const Rotract = () => {
+  const backendUrl=import.meta.env.BACKEND_URL;
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [alternateImage, setAlternateImage] = useState("revent2.jpg");
   const [isImpactVisible, setIsImpactVisible] = useState(false);
@@ -22,7 +24,7 @@ const Rotract = () => {
   const getAllAwardsByClub = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/award/${clubId}/getAllAwardsByClubId`
+        `${backendUrl}/award/${clubId}/getAllAwardsByClubId`
       );
       setAwards(response.data);
       console.log("fetch awards", response.data);
@@ -34,7 +36,7 @@ const Rotract = () => {
   const getAllProjects = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/project/${clubId}/getAllProjectsByClubId`
+        `${backendUrl}/project/${clubId}/getAllProjectsByClubId`
       );
       console.log("fetch projects", response.data);
       setProjects(response.data);
@@ -54,7 +56,7 @@ const Rotract = () => {
   const getClub = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:7000/api/v1/club/findClub/${clubId}`
+        `${backendUrl}/club/findClub/${clubId}`
       );
       console.log(response.data);
       setClub(response.data);

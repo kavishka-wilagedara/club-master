@@ -16,6 +16,8 @@ const Rotractnav = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
+  const backendUrl=import.meta.env.BACKEND_URL;
+
 
   const handleUnEnroll = async () => {
     try {
@@ -32,7 +34,7 @@ const Rotractnav = ({
 
       if (result.isConfirmed) {
         const response = await axios.delete(
-          `http://localhost:7000/api/v1/club/${user.id}/unroll-member/${clubId}`
+          `${backendUrl}/club/${user.id}/unroll-member/${clubId}`
         );
         console.log(response.data);
 
