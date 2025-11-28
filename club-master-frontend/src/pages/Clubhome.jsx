@@ -9,9 +9,8 @@ import { FaUsers } from "react-icons/fa";
 
 // ClubCard component that uses club data from API
 const ClubCard = ({ club }) => {
-  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Use the backgroundImageUrls from the API response
   const bgImages = club.backgroundImageUrls || ["/1.jpg", "/2.jpg", "/3.jpg"];
   
@@ -55,12 +54,14 @@ const ClubCard = ({ club }) => {
 
 const Clubhome = () => {
   const [clubs, setClubs] = useState([]);
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     getAllClubs();
   }, []);
 
   const getAllClubs = async () => {
+    console.log("Club url", `${backendUrl}`)
     try {
       const response = await axios.get(`${backendUrl}/club/all`);
       console.log('Clubs data:', response.data);
