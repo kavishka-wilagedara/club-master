@@ -10,8 +10,7 @@ import Navbar from '../components/Navbar';
 
 
 const ClubEnrollment = () => {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [enrollmentKey, setEnrollmentKey] = useState('');

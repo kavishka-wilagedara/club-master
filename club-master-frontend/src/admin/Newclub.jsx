@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const ClubRegistrationForm = () => {
-  const backendUrl=import.meta.env.BACKEND_URL;
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
   // State for form data
   const [formData, setFormData] = useState({

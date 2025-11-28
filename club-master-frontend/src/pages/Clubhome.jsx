@@ -9,8 +9,7 @@ import { FaUsers } from "react-icons/fa";
 
 // ClubCard component that uses club data from API
 const ClubCard = ({ club }) => {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Use the backgroundImageUrls from the API response

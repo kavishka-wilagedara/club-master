@@ -4,8 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function ViewClubAdminAwards() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const { user } = useContext(UserContext);
   const clubId = user?.id?.split(':')[0];
   const clubAdminId = user?.id;

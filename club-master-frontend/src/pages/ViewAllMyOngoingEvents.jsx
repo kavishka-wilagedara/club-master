@@ -5,8 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 
 export default function ViewAllMyOngoingEvents() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [events, setEvents] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);

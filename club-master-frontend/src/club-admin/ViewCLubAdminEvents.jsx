@@ -4,8 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function ViewClubAdminEvents() {
-      const backendUrl=import.meta.env.BACKEND_URL;
-
+    const backendUrl=import.meta.env.VITE_BACKEND_URL;
     const [events, setEvents] = useState([]);
     const { user } = useContext(UserContext);
     const [loading, setLoading] = useState(true);

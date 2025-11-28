@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import "./ViewAllClubs.css";
 
 export default function ViewAllClubs({ changeView }) {
-  const backendUrl=import.meta.env.BACKEND_URL;
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);

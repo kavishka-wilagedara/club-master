@@ -16,7 +16,8 @@ const Rotractnav = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  const backendUrl=import.meta.env.BACKEND_URL;
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
+
 
 
   const handleUnEnroll = async () => {

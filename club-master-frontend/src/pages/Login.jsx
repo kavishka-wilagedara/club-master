@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import { UserContext } from "../common/UserContext";
 
 const Login = () => {
-    const backendUrl=import.meta.env.BACKEND_URL;
+    const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

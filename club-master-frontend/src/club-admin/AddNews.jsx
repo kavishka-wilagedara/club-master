@@ -3,8 +3,7 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function AddNews() {
-  const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const { user } = useContext(UserContext);
   const clubId = user?.id?.split(':')[0];
   

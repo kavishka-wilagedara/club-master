@@ -6,7 +6,7 @@ import { Modal, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 export default function ViewAdminAwards() {
-    const backendUrl=import.meta.env.BACKEND_URL;
+    const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);

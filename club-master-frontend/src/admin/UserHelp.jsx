@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { Trash2 } from 'lucide-react';
 
 const UserHelp = () => {
-    const backendUrl=import.meta.env.BACKEND_URL;
+    const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../admin/ViewAllMainAdmin.css"; 
 
 export default function ViewAllMainAdmin() {
-  const backendUrl=import.meta.env.BACKEND_URL;
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
 
   const [admins, setAdmins] = useState([]);
 

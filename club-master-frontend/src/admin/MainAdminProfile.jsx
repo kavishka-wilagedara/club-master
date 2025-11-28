@@ -3,7 +3,8 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function MainAdminProfile() {
-    const backendUrl=import.meta.env.BACKEND_URL;
+    const backendUrl=import.meta.env.VITE_BACKEND_URL;
+
     const { user } = useContext(UserContext);
     const [admin, setAdmin] = useState(null);
     const [loading, setLoading] = useState(true);

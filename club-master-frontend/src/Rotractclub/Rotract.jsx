@@ -7,8 +7,7 @@ import axios from "axios";
 import { Link, useSearchParams } from "react-router-dom";
 
 const Rotract = () => {
-  const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [alternateImage, setAlternateImage] = useState("revent2.jpg");
   const [isImpactVisible, setIsImpactVisible] = useState(false);

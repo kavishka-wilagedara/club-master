@@ -4,7 +4,8 @@ import { Users, X, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function ExecutivePanel() {
-    const backendUrl=import.meta.env.BACKEND_URL;
+    const backendUrl=import.meta.env.VITE_BACKEND_URL;
+
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);

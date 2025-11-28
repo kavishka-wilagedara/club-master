@@ -6,8 +6,7 @@ import axios from 'axios'; // Import axios for making HTTP requests
 import Swal from 'sweetalert2'; // Import SweetAlert2
 
 const Signup = () => {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

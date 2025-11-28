@@ -7,8 +7,7 @@ import { useSearchParams } from 'react-router-dom';
 import { UserContext } from '../common/UserContext';
 
 const RotaractNewsFeed = () => {
-  const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [interactions, setInteractions] = useState({});
   const [news, setNews] = useState([]);
   const [searchParams] = useSearchParams();

@@ -3,8 +3,7 @@ import axios from "axios";
 import "./ViewClubDetails.css";
 
 export default function ClubDetails({ clubId }) {
-  const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

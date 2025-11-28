@@ -6,8 +6,7 @@ import { UserContext } from '../common/UserContext';
 import axios from 'axios';
 
 export default function ViewMyOngoingEvents() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

@@ -6,9 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function ViewMyPastEvents() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
-    const [clubs, setClubs] = useState([]);
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
+  const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [animateIn, setAnimateIn] = useState(false);

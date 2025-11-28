@@ -6,8 +6,7 @@ import Sidebar from "../components/Sidebar";
 import { ThumbsUp, ThumbsDown, Calendar, User, Clock, Share2, Bookmark } from "lucide-react";
 
 export default function ViewAllNews() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();

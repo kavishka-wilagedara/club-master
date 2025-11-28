@@ -6,8 +6,7 @@ import axios from 'axios';
 import { UserContext } from '../common/UserContext';
 
 const UserProfile = () => {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const { user } = useContext(UserContext);
   const [userDetails, setUserDetails] = useState(null);
   const [isEditing, setIsEditing] = useState(false);

@@ -4,8 +4,7 @@ import { UserContext } from "../common/UserContext";
 import axios from "axios";
 
 export default function ViewAllClubAdmin() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [clubAdmins, setClubAdmins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

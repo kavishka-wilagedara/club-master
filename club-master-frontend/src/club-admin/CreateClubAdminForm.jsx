@@ -10,8 +10,7 @@ import {
 } from "react-icons/fi";
 
 export default function CreateClubAdminForm() {
-    const backendUrl=import.meta.env.BACKEND_URL;
-
+  const backendUrl=import.meta.env.VITE_BACKEND_URL;
   const [formData, setFormData] = useState({
     clubId: "",
     memberId: "",
